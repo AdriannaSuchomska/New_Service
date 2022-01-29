@@ -2,4 +2,21 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  if show
+    form(method='post')
+      p Wybierz swój ulubiony szczyt Tatr: 
+      ul 
+        each item in data 
+          li 
+            label=item.title
+            input(type="radio" name='answer' value=item._id)
+      input(type="submit" value='Prześlij odpowiedź')
+      p Prześlij odpowiedź aby wziąć udział w Ankiecie.
+  else 
+    h1 Brałeś już udział w Ankiecie.
+    p Wyniki
+    ul
+    each item in data
+      li #{item.title} Głosy:#{item.vote} (#{Math.round(item.vote/summary*100)}%)
+    p Ilość osób, które wzięły udział w Ankiecie
+
