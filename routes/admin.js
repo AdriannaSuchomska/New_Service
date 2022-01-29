@@ -1,6 +1,5 @@
 const express = require('express');
-const req = require('express/lib/request');
-const res = require('express/lib/response');
+
 const News = require('../models/news');
 const router = express.Router();
 ;

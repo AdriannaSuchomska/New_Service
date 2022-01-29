@@ -11,9 +11,7 @@ router.get('/', (req, res) => {
     data.forEach( (item) => {
       summary += item.vote;
     });
-
-
-    res.render('questionnaire', { title: 'Ankieta', data, summary });
+    res.render('questionnaire', { title: 'Ankieta', data, show, summary });
   });
 });
 

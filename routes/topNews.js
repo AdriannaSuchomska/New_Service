@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     .sort({created: -1});
 
   topNews.exec((err, data) => {
-      res.render('topNews', { title: 'Top News', data, search });
+      res.render('topNews', { title: 'Top News', data, search, });
   });
 });
 
